@@ -10,32 +10,36 @@
     <h1>Je te te flute 😍</h1>
 
     <button onclick="declencherPluie()">💖 Pluie de cœurs 💖</button>
-
-    <img class="peluche" src="https://raw.githubusercontent.com/ngerardtech-dotcom/PAPUCHE/main/WhatsApp%20Image%202025-11-19%20at%2000.31.17.jpeg" alt="Peluche trop mignonne">
 </div>
-</body>
-</html>
-<script>
+    <script>
+// Création d'un cœur qui tombe
 function creerCoeur() {
     const coeur = document.createElement("div");
-    coeur.classList.add("coeur");
+    coeur.className = "coeur";
     coeur.textContent = "❤️";
-    coeur.style.left = Math.random() * 100 + "vw";
     
-    // Taille et durée aléatoires
+    // Position horizontale aléatoire
+    coeur.style.left = Math.random() * 100 + "vw";
+
+    // Durée et taille aléatoires
     coeur.style.fontSize = (20 + Math.random() * 30) + "px";
-    coeur.style.animationDuration = (3 + Math.random() * 4) + "s";
+    coeur.style.animationDuration = (3 + Math.random() * 5) + "s";
 
     document.body.appendChild(coeur);
 
-    setTimeout(() => {
-        coeur.remove();
-    }, 8000);
+    // Suppression quand il a fini de tomber
+    setTimeout(() => coeur.remove(), 8000);
 }
 
+// Fonction déclenchée par le bouton
 function declencherPluie() {
-    for (let i = 0; i < 50; i++) {
-        setTimeout(creerCoeur, i * 100); // un cœur toutes les 0.1s
+    let nombreDeCoeurs = 100; // mets plus si tu veux 💖
+    for (let i = 0; i < nombreDeCoeurs; i++) {
+        setTimeout(creerCoeur, i * 80);
     }
 }
 </script>
+
+</body>
+</html>
+
