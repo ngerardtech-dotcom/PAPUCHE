@@ -91,5 +91,21 @@ button:hover {
     transform: scale(1.1);
     background: #ff4fa6;
 }
+button {
+    font-size: 35px; /* plus gros emoji */
+    background: #7a2f8f; /* violet aubergine */
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.2) rotate(8deg);
+    background: #9d3cba;
+}
+
 
 
