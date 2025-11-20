@@ -71,41 +71,27 @@ h1 {
     transition: transform 0.3s;
 }
 button {
-    background: hotpink;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 12px;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: transform 0.2s, background 0.2s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     display: block;
-    margin: 20px auto; /* centre horizontalement */
-}
-
-}
-
-button:hover {
-    transform: scale(1.1);
-    background: #ff4fa6;
-}
-button {
-    font-size: 35px; /* plus gros emoji */
+    margin: 20px auto;
+    font-size: 90px; /* Aubergine encore plus grosse 🍆 */
+    width: 180px; /* taille du bouton */
+    height: 180px;
     background: #7a2f8f; /* violet aubergine */
+    border-radius: 50%; /* bouton bien rond */
     border: none;
-    padding: 15px 25px;
-    border-radius: 50%;
     cursor: pointer;
     color: white;
-    transition: transform 0.2s;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 button:hover {
-    transform: scale(1.2) rotate(8deg);
-    background: #9d3cba;
+    transform: scale(1.25) rotate(12deg);
+    background: #a13fcc; /* violet plus clair au survol */
 }
+
+
+
 
 
 
