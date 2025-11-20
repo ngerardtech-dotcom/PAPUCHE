@@ -2,61 +2,58 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Chatons 🌈</title>
+    <title>Papuche ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="contenu">
-    <h1>Je te te flute 😍</h1>
+    <div class="contenu">
+        <h1>Je te te flute 😍</h1>
 
-<button onclick="explosionDeCoeurs()">🍆</button>
-</div>
+        <!-- Bouton aubergine -->
+        <button id="bouton-aubergine" onclick="explosionDeCoeurs()">🍆</button>
+
+        <!-- Image peluche -->
+        <img class="peluche" src="https://raw.githubusercontent.com/ngerardtech-dotcom/PAPUCHE/main/WhatsApp%20Image%202025-11-19%20at%2000.31.17.jpeg" alt="Peluche trop mignonne">
+    </div>
+
     <script>
-// Création d'un cœur qui tombe
-function creerCoeur() {
-    const coeur = document.createElement("div");
-    coeur.className = "coeur";
-    coeur.textContent = "❤️";
-    
-    // Position horizontale aléatoire
-    coeur.style.left = Math.random() * 100 + "vw";
+        // Explosion de cœurs à partir du centre du bouton
+        function explosionDeCoeurs() {
+            const bouton = document.getElementById("bouton-aubergine");
+            const rect = bouton.getBoundingClientRect();
 
-    // Durée et taille aléatoires
-    coeur.style.fontSize = (20 + Math.random() * 30) + "px";
-    coeur.style.animationDuration = (3 + Math.random() * 5) + "s";
+            // centre du bouton
+            const centreX = rect.left + rect.width / 2;
+            const centreY = rect.top + rect.height / 2 + window.scrollY;
 
-    document.body.appendChild(coeur);
+            const nombre = 35; // nombre de cœurs 💥
 
-    // Suppression quand il a fini de tomber
-    setTimeout(() => coeur.remove(), 8000);
-}
+            for (let i = 0; i < nombre; i++) {
+                const coeur = document.createElement("div");
+                coeur.className = "explosion-coeur";
 
-<script>
-function explosionDeCoeurs() {
-    const nombre = 30; // Nombre de cœurs dans l'explosion 💥
+                // différents types de cœurs
+                const coeurs = ["❤️","🧡","💛","💚","💙","💜","🩷"];
+                coeur.textContent = coeurs[Math.floor(Math.random() * coeurs.length)];
 
-    for (let i = 0; i < nombre; i++) {
-        const coeur = document.createElement("div");
-        coeur.className = "explosion-coeur";
-        coeur.textContent = "❤️";
+                // position de départ = centre du bouton
+                coeur.style.left = centreX + "px";
+                coeur.style.top = centreY + "px";
 
-        // Position au centre du bouton
-        coeur.style.left = (window.innerWidth / 2) + "px";
-        coeur.style.top = (window.innerHeight / 2) + "px";
+                // direction aléatoire
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 100 + Math.random() * 200;
+                coeur.style.setProperty("--dx", Math.cos(angle) * distance + "px");
+                coeur.style.setProperty("--dy", Math.sin(angle) * distance + "px");
 
-        // Direction aléatoire
-        const angle = Math.random() * Math.PI * 2;
-        const distance = 200 + Math.random() * 200;
-        coeur.style.setProperty("--dx", Math.cos(angle) * distance + "px");
-        coeur.style.setProperty("--dy", Math.sin(angle) * distance + "px");
+                // taille aléatoire
+                coeur.style.fontSize = (20 + Math.random() * 25) + "px";
 
-        document.body.appendChild(coeur);
-        setTimeout(() => coeur.remove(), 1000);
-    }
-}
-</script>
+                document.body.appendChild(coeur);
 
-
+                setTimeout(() => coeur.remove(), 1000);
+            }
+        }
+    </script>
 </body>
 </html>
-
