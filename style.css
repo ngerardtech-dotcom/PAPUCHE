@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(45deg,
+        red, orange, yellow, green, cyan, blue, violet);
+    background-size: 400% 400%;
+    animation: arc 8s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes arc {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+h1 {
+    font-size: 60px;
+    color: white;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+}
+.chatons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.chatons img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
+}
+
+.chatons img:hover {
+    transform: scale(1.15) rotate(5deg);
+}
