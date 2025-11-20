@@ -81,6 +81,10 @@ button {
     margin-top: 20px;
     transition: transform 0.2s, background 0.2s;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: block;
+    margin: 20px auto; /* centre horizontalement */
+}
+
 }
 
 button:hover {
