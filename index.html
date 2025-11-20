@@ -9,7 +9,7 @@
 <div class="contenu">
     <h1>Je te te flute 😍</h1>
 
- <button onclick="declencherPluie()">🍆</button>
+<button onclick="explosionDeCoeurs()">🍆</button>
 </div>
     <script>
 // Création d'un cœur qui tombe
@@ -31,14 +31,31 @@ function creerCoeur() {
     setTimeout(() => coeur.remove(), 8000);
 }
 
-// Fonction déclenchée par le bouton
-function declencherPluie() {
-    let nombreDeCoeurs = 100; // mets plus si tu veux 💖
-    for (let i = 0; i < nombreDeCoeurs; i++) {
-        setTimeout(creerCoeur, i * 80);
+<script>
+function explosionDeCoeurs() {
+    const nombre = 30; // Nombre de cœurs dans l'explosion 💥
+
+    for (let i = 0; i < nombre; i++) {
+        const coeur = document.createElement("div");
+        coeur.className = "explosion-coeur";
+        coeur.textContent = "❤️";
+
+        // Position au centre du bouton
+        coeur.style.left = (window.innerWidth / 2) + "px";
+        coeur.style.top = (window.innerHeight / 2) + "px";
+
+        // Direction aléatoire
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 200 + Math.random() * 200;
+        coeur.style.setProperty("--dx", Math.cos(angle) * distance + "px");
+        coeur.style.setProperty("--dy", Math.sin(angle) * distance + "px");
+
+        document.body.appendChild(coeur);
+        setTimeout(() => coeur.remove(), 1000);
     }
 }
 </script>
+
 
 </body>
 </html>
