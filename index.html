@@ -15,3 +15,27 @@
 </div>
 </body>
 </html>
+<script>
+function creerCoeur() {
+    const coeur = document.createElement("div");
+    coeur.classList.add("coeur");
+    coeur.textContent = "❤️";
+    coeur.style.left = Math.random() * 100 + "vw";
+    
+    // Taille et durée aléatoires
+    coeur.style.fontSize = (20 + Math.random() * 30) + "px";
+    coeur.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+    document.body.appendChild(coeur);
+
+    setTimeout(() => {
+        coeur.remove();
+    }, 8000);
+}
+
+function declencherPluie() {
+    for (let i = 0; i < 50; i++) {
+        setTimeout(creerCoeur, i * 100); // un cœur toutes les 0.1s
+    }
+}
+</script>
