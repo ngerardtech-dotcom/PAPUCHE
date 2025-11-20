@@ -20,6 +20,10 @@
             const centreX = window.innerWidth / 2;
             const centreY = window.innerHeight / 2;
 
+            const audio = document.getElementById("sonPop");
+audio.currentTime = 0;
+audio.play();
+
             for (let i = 0; i < nombre; i++) {
                 const coeur = document.createElement("div");
                 coeur.className = "explosion-coeur";
