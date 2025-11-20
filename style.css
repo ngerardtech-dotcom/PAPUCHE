@@ -1,94 +1,81 @@
+/* Fond : mosaïque de la peluche */
 body {
     margin: 0;
     height: 100vh;
     background-image: url("https://raw.githubusercontent.com/ngerardtech-dotcom/PAPUCHE/main/WhatsApp%20Image%202025-11-19%20at%2000.31.17.jpeg");
-    background-repeat: repeat; /* Mosaïque */
-    background-size: 150px; /* Taille des images de fond */
+    background-repeat: repeat;
+    background-size: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
 }
 
-@keyframes fall {
-    0% {
-        transform: translateY(-10vh);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(120vh);
-        opacity: 0;
-    }
-}
-
-.coeur {
-    position: fixed;
-    top: -10vh;
-    animation-name: fall;
-    animation-timing-function: linear;
-    color: red;
-    pointer-events: none;
+/* Bloc central */
+.contenu {
+    background-color: rgba(255, 255, 255, 0.55);
+    padding: 25px 45px;
+    border-radius: 25px;
+    backdrop-filter: blur(7px);
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.35);
 }
 
 h1 {
-    font-size: 60px;
-    color: white;
-    text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
-}
-.chatons {
-    display: flex;
-    gap: 20px;
-    margin-top: 30px;
+    font-size: 40px;
+    margin: 0 0 15px 0;
 }
 
-.chatons img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    transition: transform 0.3s;
-}
-
-.chatons img:hover {
-    transform: scale(1.15) rotate(5deg);
-}
+/* Peluche */
 .peluche {
-    width: 300px;
+    width: 180px;
     height: auto;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    margin-top: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.35);
+    margin-top: 20px;
     transition: transform 0.3s;
 }
 
-.peluche {
-    width: 180px; /* Taille réduite */
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    margin-top: 30px;
-    transition: transform 0.3s;
+.peluche:hover {
+    transform: scale(1.1);
 }
+
+/* Bouton aubergine avec AURA lumineuse */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.5),
+                    0 0 25px rgba(255, 0, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 0, 255, 0.9),
+                    0 0 50px rgba(255, 0, 255, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.5),
+                    0 0 25px rgba(255, 0, 255, 0.5);
+    }
+}
+
 button {
     display: block;
     margin: 20px auto;
-    font-size: 90px; /* Aubergine encore plus grosse 🍆 */
-    width: 180px; /* taille du bouton */
+    font-size: 90px;          /* grosse aubergine 🍆 */
+    width: 180px;
     height: 180px;
-    background: #7a2f8f; /* violet aubergine */
-    border-radius: 50%; /* bouton bien rond */
+    background: #7a2f8f;
+    border-radius: 50%;
     border: none;
     cursor: pointer;
     color: white;
+    animation: glow 1.5s infinite;  /* aura lumineuse ✨ */
     transition: transform 0.2s, background 0.2s;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 button:hover {
     transform: scale(1.25) rotate(12deg);
-    background: #a13fcc; /* violet plus clair au survol */
+    background: #a13fcc;
 }
+
 /* Explosion de cœurs */
 @keyframes explode {
     0% {
@@ -103,13 +90,7 @@ button:hover {
 
 .explosion-coeur {
     position: fixed;
-    font-size: 30px;
-    pointer-events: none;
     animation: explode 0.9s ease-out forwards;
+    pointer-events: none;
+    user-select: none;
 }
-
-
-
-
-
-
