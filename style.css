@@ -39,3 +39,15 @@ h1 {
 .chatons img:hover {
     transform: scale(1.15) rotate(5deg);
 }
+.peluche {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    margin-top: 30px;
+    transition: transform 0.3s;
+}
+
+.peluche:hover {
+    transform: scale(1.1);
+}
