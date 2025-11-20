@@ -10,9 +10,24 @@ body {
     font-family: Arial, sans-serif;
 }
 
-@keyframes arc {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(120vh);
+        opacity: 0;
+    }
+}
+
+.coeur {
+    position: fixed;
+    top: -10vh;
+    animation-name: fall;
+    animation-timing-function: linear;
+    color: red;
+    pointer-events: none;
 }
 
 h1 {
