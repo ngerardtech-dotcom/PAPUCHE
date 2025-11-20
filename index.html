@@ -9,44 +9,46 @@
     <div class="contenu">
         <h1>Je te te flute 😍</h1>
 
-        <!-- Bouton aubergine -->
-       <button onclick="explosionDeCoeurs()">🍆</button>
+        <!-- Gros bouton aubergine -->
+        <button onclick="explosionDeCoeurs()">🍆</button>
 
         <!-- Image peluche -->
         <img class="peluche" src="https://raw.githubusercontent.com/ngerardtech-dotcom/PAPUCHE/main/WhatsApp%20Image%202025-11-19%20at%2000.31.17.jpeg" alt="Peluche trop mignonne">
     </div>
 
-   <script>
-function explosionDeCoeurs() {
-    const bouton = document.querySelector("button");
-    const rect = bouton.getBoundingClientRect();
+    <script>
+        // Explosion de cœurs à partir du centre de l'écran
+        function explosionDeCoeurs() {
+            const nombre = 40; // nombre de cœurs 💥
+            const centreX = window.innerWidth / 2;
+            const centreY = window.innerHeight / 2;
 
-    const centreX = rect.left + rect.width / 2;
-    const centreY = rect.top + rect.height / 2;
+            for (let i = 0; i < nombre; i++) {
+                const coeur = document.createElement("div");
+                coeur.className = "explosion-coeur";
 
-    const nombre = 40; // Nombre de cœurs qui explosent 💥
+                // différents types de cœurs
+                const coeurs = ["❤️","🧡","💛","💚","💙","💜","🩷"];
+                coeur.textContent = coeurs[Math.floor(Math.random() * coeurs.length)];
 
-    for (let i = 0; i < nombre; i++) {
-        const coeur = document.createElement("div");
-        coeur.className = "explosion-coeur";
-        coeur.textContent = "❤️";
+                // position de départ = centre de l'écran
+                coeur.style.left = centreX + "px";
+                coeur.style.top = centreY + "px";
 
-        // Position de départ = centre du bouton
-        coeur.style.left = centreX + "px";
-        coeur.style.top = centreY + "px";
+                // direction aléatoire
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 100 + Math.random() * 200;
+                coeur.style.setProperty("--dx", Math.cos(angle) * distance + "px");
+                coeur.style.setProperty("--dy", Math.sin(angle) * distance + "px");
 
-        // Direction aléatoire
-        const angle = Math.random() * Math.PI * 2;
-        const distance = 100 + Math.random() * 200;
-        coeur.style.setProperty("--dx", Math.cos(angle) * distance + "px");
-        coeur.style.setProperty("--dy", Math.sin(angle) * distance + "px");
+                // taille aléatoire
+                coeur.style.fontSize = (24 + Math.random() * 26) + "px";
 
-        document.body.appendChild(coeur);
+                document.body.appendChild(coeur);
 
-        // Supprime le cœur après l’animation
-        setTimeout(() => coeur.remove(), 1000);
-    }
-}
-</script>
+                setTimeout(() => coeur.remove(), 1000);
+            }
+        }
+    </script>
 </body>
 </html>
