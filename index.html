@@ -9,21 +9,5 @@
     <div class="contenu">
         <h1>Je te te flute 😍</h1>
     </div>
-    <script>
-function lancerCoeurs() {
-    const coeur = document.createElement("div");
-    coeur.classList.add("coeur");
-    coeur.textContent = "❤️";
-    coeur.style.left = Math.random() * 100 + "vw";
-    coeur.style.animationDuration = (2 + Math.random() * 3) + "s";
-    document.body.appendChild(coeur);
-
-    setTimeout(() => {
-        coeur.remove();
-    }, 5000);
-}
-
-setInterval(lancerCoeurs, 300);
-</script>
 </body>
 </html>
