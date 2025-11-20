@@ -76,25 +76,7 @@ button:hover {
     background: #a13fcc;
 }
 
-/* Cœurs qui tombent */
-@keyframes fall {
-    0% {
-        transform: translateY(-10vh);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(120vh);
-        opacity: 0;
-    }
-}
-
-.coeur {
-    position: fixed;
-    top: -10vh;
-    animation-name: fall;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    /* Explosion de cœurs */
+/* Explosion de cœurs */
 @keyframes explode {
     0% {
         transform: translate(0, 0) scale(1);
@@ -109,11 +91,6 @@ button:hover {
 .explosion-coeur {
     position: fixed;
     animation: explode 0.9s ease-out forwards;
-    font-size: 30px;
-    pointer-events: none;
-}
-
-    color: red;
     pointer-events: none;
     user-select: none;
 }
