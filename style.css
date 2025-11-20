@@ -40,7 +40,7 @@ h1 {
     transform: scale(1.1);
 }
 
-/* Bouton aubergine avec AURA lumineuse */
+/* Bouton aubergine avec aura lumineuse */
 @keyframes glow {
     0% {
         box-shadow: 0 0 10px rgba(255, 0, 255, 0.5),
@@ -76,21 +76,25 @@ button:hover {
     background: #a13fcc;
 }
 
-/* Explosion de cœurs */
-@keyframes explode {
+/* Cœurs qui tombent */
+@keyframes fall {
     0% {
-        transform: translate(0, 0) scale(1);
+        transform: translateY(-10vh);
         opacity: 1;
     }
     100% {
-        transform: translate(var(--dx), var(--dy)) scale(0);
+        transform: translateY(120vh);
         opacity: 0;
     }
 }
 
-.explosion-coeur {
+.coeur {
     position: fixed;
-    animation: explode 0.9s ease-out forwards;
+    top: -10vh;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    color: red;
     pointer-events: none;
     user-select: none;
 }
