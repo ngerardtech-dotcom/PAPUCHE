@@ -48,6 +48,12 @@ h1 {
     transition: transform 0.3s;
 }
 
-.peluche:hover {
-    transform: scale(1.1);
+.peluche {
+    width: 180px; /* Taille réduite */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    margin-top: 30px;
+    transition: transform 0.3s;
 }
+
