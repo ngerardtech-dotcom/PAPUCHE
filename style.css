@@ -1,96 +1,26 @@
-/* Fond : mosaïque de la peluche */
 body {
-    margin: 0;
-    height: 100vh;
-    background-image: url("https://raw.githubusercontent.com/ngerardtech-dotcom/PAPUCHE/main/WhatsApp%20Image%202025-11-19%20at%2000.31.17.jpeg");
-    background-repeat: repeat;
-    background-size: 150px;
+    background: #222;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
     font-family: Arial, sans-serif;
-}
-
-/* Bloc central */
-.contenu {
-    background-color: rgba(255, 255, 255, 0.55);
-    padding: 25px 45px;
-    border-radius: 25px;
-    backdrop-filter: blur(7px);
-    text-align: center;
-    box-shadow: 0 0 25px rgba(0,0,0,0.35);
-}
-
-h1 {
-    font-size: 40px;
-    margin: 0 0 15px 0;
-}
-
-/* Peluche */
-.peluche {
-    width: 180px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.35);
-    margin-top: 20px;
-    transition: transform 0.3s;
-}
-
-.peluche:hover {
-    transform: scale(1.1);
-}
-
-/* Bouton aubergine avec aura lumineuse */
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 10px rgba(255, 0, 255, 0.5),
-                    0 0 25px rgba(255, 0, 255, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 25px rgba(255, 0, 255, 0.9),
-                    0 0 50px rgba(255, 0, 255, 0.9);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(255, 0, 255, 0.5),
-                    0 0 25px rgba(255, 0, 255, 0.5);
-    }
-}
-
-button {
-    display: block;
-    margin: 20px auto;
-    font-size: 90px;          /* grosse aubergine 🍆 */
-    width: 180px;
-    height: 180px;
-    background: #7a2f8f;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
     color: white;
-    animation: glow 1.5s infinite;  /* aura lumineuse ✨ */
-    transition: transform 0.2s, background 0.2s;
 }
 
-button:hover {
-    transform: scale(1.25) rotate(12deg);
-    background: #a13fcc;
+/* La peluche danse ! */
+@keyframes danse {
+    0%   { transform: translateX(0) rotate(0deg); }
+    25%  { transform: translateX(-30px) rotate(-10deg); }
+    50%  { transform: translateX(0) rotate(0deg); }
+    75%  { transform: translateX(30px) rotate(10deg); }
+    100% { transform: translateX(0) rotate(0deg); }
 }
 
-/* Explosion de cœurs */
-@keyframes explode {
-    0% {
-        transform: translate(0, 0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(var(--dx), var(--dy)) scale(0);
-        opacity: 0;
-    }
-}
-
-.explosion-coeur {
-    position: fixed;
-    animation: explode 7s ease-out forwards;
-    pointer-events: none;
-    user-select: none;
+.peluche {
+    width: 250px;
+    border-radius: 20px;
+    animation: danse 1s infinite;
 }
