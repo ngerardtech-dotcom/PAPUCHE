@@ -51,6 +51,10 @@ function tomberCoeur() {
             score++;
             vitesse += 0.3;
             scoreAffichage.textContent = "Score : " + score;
+            // Son de joie
+const son = document.getElementById("yaay");
+son.currentTime = 0;
+son.play();
 
             papuche.classList.add("jump");
             setTimeout(() => papuche.classList.remove("jump"), 400);
