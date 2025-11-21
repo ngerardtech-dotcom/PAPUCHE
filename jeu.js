@@ -9,8 +9,17 @@ let viesPerdues = 0;
 let positionX = window.innerWidth / 2;
 
 // Lancer la musique quand le jeu démarre
-musik.volume = 0.6;
-musik.play();
+let musiqueLancee = false;
+
+// Lancer la musique à la première interaction
+function lancerMusique() {
+    if (!musiqueLancee) {
+        musik.volume = 0.6;
+        musik.play();
+        musiqueLancee = true;
+    }
+}
+
 
 // Déplacement Papuche
 document.addEventListener("keydown", (e) => {
