@@ -1,3 +1,4 @@
+const musik = document.getElementById("musik");
 const papuche = document.getElementById("papuche");
 const coeur = document.getElementById("coeur");
 const scoreAffichage = document.getElementById("score");
@@ -20,6 +21,12 @@ document.addEventListener("keydown", (e) => {
 function tomberCoeur() {
     let y = -50;
     let x = Math.random() * (window.innerWidth - 50);
+    tomberCoeur(); // ← ton code actuel
+
+// Juste après le début du jeu
+musik.volume = 0.6; // 60% du son
+musik.play();
+
 
     coeur.style.left = x + "px";
 
