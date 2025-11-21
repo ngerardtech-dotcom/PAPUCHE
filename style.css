@@ -1,5 +1,7 @@
 body {
-    background: #111;
+    background-image: url("https://i.imgur.com/7bVZ3Uu.png");
+    background-size: cover;
+    background-position: center;
     margin: 0;
     overflow: hidden;
     font-family: Arial, sans-serif;
