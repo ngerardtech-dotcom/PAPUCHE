@@ -1,12 +1,16 @@
-const musik = document.getElementById("musik");
 const papuche = document.getElementById("papuche");
 const coeur = document.getElementById("coeur");
 const scoreAffichage = document.getElementById("score");
+const musik = document.getElementById("musik");
 
 let score = 0;
 let vitesse = 3;
 let viesPerdues = 0;
 let positionX = window.innerWidth / 2;
+
+// Lancer la musique quand le jeu démarre
+musik.volume = 0.6;
+musik.play();
 
 // Déplacement Papuche
 document.addEventListener("keydown", (e) => {
@@ -21,12 +25,6 @@ document.addEventListener("keydown", (e) => {
 function tomberCoeur() {
     let y = -50;
     let x = Math.random() * (window.innerWidth - 50);
-    tomberCoeur(); // ← ton code actuel
-
-// Juste après le début du jeu
-musik.volume = 0.6; // 60% du son
-musik.play();
-
 
     coeur.style.left = x + "px";
 
@@ -45,9 +43,10 @@ musik.play();
             score++;
             vitesse += 0.3;
             scoreAffichage.textContent = "Score : " + score;
-            // Animation de saut
-papuche.classList.add("jump");
-setTimeout(() => papuche.classList.remove("jump"), 400);
+
+            // Animation du saut
+            papuche.classList.add("jump");
+            setTimeout(() => papuche.classList.remove("jump"), 400);
 
             coeur.style.top = "-50px";
             clearInterval(interval);
