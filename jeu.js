@@ -7,11 +7,9 @@ let score = 0;
 let vitesse = 3;
 let viesPerdues = 0;
 let positionX = window.innerWidth / 2;
-
-// Lancer la musique quand le jeu démarre
 let musiqueLancee = false;
 
-// Lancer la musique à la première interaction
+// Lancer musique à la première interaction
 function lancerMusique() {
     if (!musiqueLancee) {
         musik.volume = 0.6;
@@ -22,15 +20,14 @@ function lancerMusique() {
 
 // Déplacement Papuche
 document.addEventListener("keydown", (e) => {
+    lancerMusique();
+
     if (e.key === "ArrowLeft") positionX -= 30;
     if (e.key === "ArrowRight") positionX += 30;
 
     positionX = Math.max(0, Math.min(window.innerWidth - 120, positionX));
     papuche.style.left = positionX + "px";
 });
-document.addEventListener("keydown", (e) => {
-    lancerMusique(); // <<< AJOUT ICI
-
 
 // Animation des cœurs
 function tomberCoeur() {
@@ -55,12 +52,11 @@ function tomberCoeur() {
             vitesse += 0.3;
             scoreAffichage.textContent = "Score : " + score;
 
-            // Animation du saut
             papuche.classList.add("jump");
             setTimeout(() => papuche.classList.remove("jump"), 400);
 
-            coeur.style.top = "-50px";
             clearInterval(interval);
+            coeur.style.top = "-50px";
             tomberCoeur();
         }
 
@@ -70,8 +66,8 @@ function tomberCoeur() {
                 alert("GAME OVER ! Score final : " + score);
                 location.reload();
             }
-            coeur.style.top = "-50px";
             clearInterval(interval);
+            coeur.style.top = "-50px";
             tomberCoeur();
         }
 
