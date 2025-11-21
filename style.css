@@ -27,7 +27,30 @@ body {
     top: -50px;
     left: 50%;
     transform: translateX(-50%);
+}/* Panneau des règles du jeu */
+#regles {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 190px;
+    line-height: 18px;
 }
+
+#regles h3, #regles h4 {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+}
+
+#regles p {
+    margin: 4px 0;
+}
+
+
 
 #score {
     position: fixed;
