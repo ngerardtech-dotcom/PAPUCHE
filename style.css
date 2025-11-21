@@ -35,3 +35,14 @@ body {
     left: 10px;
     font-size: 24px;
 }
+/* Animation : Papuche saute quand elle attrape un cœur */
+@keyframes jump {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-40px); }
+    60% { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}
+.jump {
+    animation: jump 0.4s ease-out;
+}
+
