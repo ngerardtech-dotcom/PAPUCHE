@@ -20,7 +20,6 @@ function lancerMusique() {
     }
 }
 
-
 // Déplacement Papuche
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") positionX -= 30;
@@ -29,6 +28,9 @@ document.addEventListener("keydown", (e) => {
     positionX = Math.max(0, Math.min(window.innerWidth - 120, positionX));
     papuche.style.left = positionX + "px";
 });
+document.addEventListener("keydown", (e) => {
+    lancerMusique(); // <<< AJOUT ICI
+
 
 // Animation des cœurs
 function tomberCoeur() {
