@@ -38,6 +38,10 @@ function tomberCoeur() {
             score++;
             vitesse += 0.3;
             scoreAffichage.textContent = "Score : " + score;
+            // Animation de saut
+papuche.classList.add("jump");
+setTimeout(() => papuche.classList.remove("jump"), 400);
+
             coeur.style.top = "-50px";
             clearInterval(interval);
             tomberCoeur();
