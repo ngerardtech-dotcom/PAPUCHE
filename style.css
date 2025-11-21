@@ -6,12 +6,14 @@ body {
     color: white;
 }
 
+/* Zone du jeu */
 #jeu {
     position: relative;
     width: 100vw;
     height: 100vh;
 }
 
+/* Image de Papuche */
 #papuche {
     width: 120px;
     position: absolute;
@@ -21,51 +23,53 @@ body {
     border-radius: 15px;
 }
 
+/* Coeur qui tombe */
 #coeur {
     font-size: 45px;
     position: absolute;
     top: -50px;
     left: 50%;
     transform: translateX(-50%);
-}/* Panneau des règles du jeu */
-#regles {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    padding: 12px 18px;
-    border-radius: 10px;
-    font-size: 14px;
-    width: 190px;
-    line-height: 18px;
 }
 
-#regles h3, #regles h4 {
-    margin: 0 0 6px 0;
-    font-size: 15px;
-}
-
-#regles p {
-    margin: 4px 0;
-}
-
-
-
+/* Score */
 #score {
     position: fixed;
     top: 10px;
     left: 10px;
     font-size: 24px;
 }
-/* Animation : Papuche saute quand elle attrape un cœur */
+
+/* Règles */
+#regles {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 200px;
+}
+
+/* Titre règles */
+#regles h3, #regles h4 {
+    margin: 4px;
+}
+
+/* Texte des règles */
+#regles p {
+    margin: 6px 0;
+}
+
+/* Animation du saut */
 @keyframes jump {
     0% { transform: translateY(0); }
     30% { transform: translateY(-40px); }
     60% { transform: translateY(0); }
     100% { transform: translateY(0); }
 }
+
 .jump {
     animation: jump 0.4s ease-out;
 }
-
